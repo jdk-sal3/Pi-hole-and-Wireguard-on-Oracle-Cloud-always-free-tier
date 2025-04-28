@@ -39,13 +39,6 @@ function addClient() {
 	CLIENT_PUB_KEY=$(echo "$CLIENT_PRIV_KEY" | wg pubkey)
 	CLIENT_PRE_SHARED_KEY=$(wg genpsk)
 
-	# Read MTU value
-	if [ -f "/sys/class/net/${SERVER_WG_NIC}/mtu" ]; then
-		#CLIENT_MTU="MTU = $(cat /sys/class/net/${SERVER_WG_NIC}/mtu)"
-		# client MTU has higher value
-		CLIENT_MTU="MTU = 1420"
-	fi
-
 	# Create client file and add the server as a peer
 	echo "[Interface]
 PrivateKey = $CLIENT_PRIV_KEY
@@ -161,7 +154,7 @@ SERVER_WG_IPV6="fd42:42:42::1"
 read -rp "Server's WireGuard IPv6: " -e -i "$SERVER_WG_IPV6" SERVER_WG_IPV6
 
 # Generate random number within private ports range
-SERVER_PORT="51515"
+SERVER_PORT="51820"
 read -rp "Server's WireGuard port: " -e -i "$SERVER_PORT" SERVER_PORT
 
 # Install WireGuard tools and module
