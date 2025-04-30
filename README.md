@@ -38,12 +38,12 @@ While Pi-hole was originally authored to run on a Raspberry Pi, people have foll
 
 ```bash
 sudo su -
-curl -O https://raw.githubusercontent.com/anbuchelva/Pi-hole-and-Wireguard-on-Oracle-Cloud-always-free-tier/master/setup.sh
+curl -O https://raw.githubusercontent.com/jdk-sal3/Pi-hole-and-Wireguard-on-Oracle-Cloud-always-free-tier/master/setup.sh
 chmod +x setup.sh
 bash ./setup.sh
 ```
 
-3.  Make sure your router or firewall is forwarding incoming UDP packets on Port 51515 to the Ubuntu Server, that you ran the **setup.sh** script on.
+3.  Make sure your router or firewall is forwarding incoming UDP packets on Port 51820 to the Ubuntu Server, that you ran the **setup.sh** script on.
 
 4.  Create another VPN Client Profile by running `./setup.sh` again, you can create 253 profiles without modifying the script.
 
